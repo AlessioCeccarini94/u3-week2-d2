@@ -36,17 +36,19 @@ const AddComment = (props) => {
           rate: "1",
           elementId: props.asin,
         })
-        props.addComments()
       })
       .catch((err) => {
         console.log(err + "errore nell'invio del commento")
       })
-    useEffect(() => {
-      props.addComments()
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.addComments])
   }
-
+  useEffect(() => {
+    if (review.elementId !== props.asin) {
+      setReview((prevReview) => ({
+        ...prevReview,
+        elementId: props.asin,
+      }))
+    }
+  }, [props.asin, review.elementId])
   return (
     <>
       <div className="d-flex flex-column align-items-center">

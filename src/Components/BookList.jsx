@@ -4,22 +4,17 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import { useState } from "react"
 import books from "../Data/fantasy.json"
 
-const BookList = (props) => {
+const BookList = () => {
   const [state, setState] = useState({
     search: "",
-    selected: false,
     bookSelected: null,
-    commentArea: false,
-    asin: props.asin,
   })
 
   const changeState = (asin) => {
+    const newAsin = state.bookSelected === asin ? null : asin
     setState({
       ...state,
-      commentArea: !state.commentArea,
-      selected: !state.selected,
-      bookSelected: asin,
-      elementId: asin,
+      bookSelected: newAsin,
     })
   }
   const filteredBooks = books.filter((book) =>
@@ -52,7 +47,7 @@ const BookList = (props) => {
                 title={book.title}
                 price={book.price}
                 asin={book.asin}
-                selected={state.bookSelected === book.asin}
+                selected={book.asin === state.bookSelected}
               />
             ))}
           </Col>

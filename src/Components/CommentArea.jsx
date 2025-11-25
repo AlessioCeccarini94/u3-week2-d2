@@ -6,7 +6,9 @@ const CommentArea = (props) => {
   const [comments, setComments] = useState([])
 
   const getComments = () => {
+    if (!props.asin) return
     console.log(props.asin)
+
     const URL =
       "https://striveschool-api.herokuapp.com/api/comments/" + props.asin
     const TOKEN =
