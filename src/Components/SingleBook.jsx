@@ -3,7 +3,7 @@ import "../index.css"
 
 const SingleBook = (props) => {
   return (
-    <Col xs={5} className="mb-3 mt-3">
+    <Col xs={10} md={5} className="mb-3 mt-3">
       <Card
         className="h-100 "
         style={{

@@ -38,7 +38,7 @@ const BookList = () => {
       </Form>
       <Container className="ms-auto w-100">
         <Row className="w-100">
-          <Col className="col-9 d-flex flex-wrap justify-content-around">
+          <Col className="col-6 col-md-9 d-flex flex-wrap justify-content-around">
             {filteredBooks.map((book) => (
               <SingleBook
                 changeState={changeState}
@@ -51,7 +51,7 @@ const BookList = () => {
               />
             ))}
           </Col>
-          <Col className="col-3 bg-light bg-dark">
+          <Col className="col-6 col-md-3 bg-light bg-dark">
             <CommentArea asin={state.bookSelected} />
           </Col>
         </Row>
