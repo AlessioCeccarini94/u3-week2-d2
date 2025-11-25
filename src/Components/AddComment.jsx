@@ -7,6 +7,14 @@ const AddComment = (props) => {
     rate: "1",
     elementId: props.asin,
   })
+  useEffect(() => {
+    if (review.elementId !== props.asin) {
+      setReview((prevReview) => ({
+        ...prevReview,
+        elementId: props.asin,
+      }))
+    }
+  }, [props.asin, review.elementId])
 
   const SendComment = (e) => {
     e.preventDefault()
