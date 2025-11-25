@@ -9,6 +9,7 @@ const AddComment = (props) => {
   })
   useEffect(() => {
     if (review.elementId !== props.asin) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setReview((prevReview) => ({
         ...prevReview,
         elementId: props.asin,
@@ -49,14 +50,6 @@ const AddComment = (props) => {
         console.log(err + "errore nell'invio del commento")
       })
   }
-  useEffect(() => {
-    if (review.elementId !== props.asin) {
-      setReview((prevReview) => ({
-        ...prevReview,
-        elementId: props.asin,
-      }))
-    }
-  }, [props.asin, review.elementId])
   return (
     <>
       <div className="d-flex flex-column align-items-center">
