@@ -10,8 +10,7 @@ const AddComment = (props) => {
   useEffect(() => {
     if (review.elementId !== props.asin) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      setReview((prevReview) => ({
-        ...prevReview,
+      setReview(() => ({
         elementId: props.asin,
       }))
     }
