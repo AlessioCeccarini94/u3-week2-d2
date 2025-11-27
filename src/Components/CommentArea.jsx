@@ -62,7 +62,10 @@ const CommentArea = (props) => {
 
   return (
     <>
-      <div className="d-flex flex-column align-items-center my-3 position-sticky top-0">
+      <div
+        className="d-flex flex-column align-items-center my-3 position-sticky top-0"
+        data-testid="comment-area"
+      >
         <CommentList comments={comments} deleteComment={deleteComment} />
         <AddComment asin={props.asin} addComments={getComments} />
       </div>
