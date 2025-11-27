@@ -10,9 +10,8 @@ const SingleBook = (props) => {
     <Col xs={10} md={5} className="mb-3 mt-3" data-testid="book-card">
       <Card
         data-testid="card"
-        className="h-100 "
+        className={`h-100 ${props.selected ? "selected" : ""}`}
         style={{
-          border: props.selected ? "3px solid red" : "none",
           cursor: "pointer",
         }}
       >
